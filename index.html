@@ -1,230 +1,428 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <title>STAATY - Sports Analytics App</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,600,700&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<header class="navbar-fixed">
-  <nav class="nav-container">
-    <a href="#home" class="nav-logo"><strong>STAATY</strong></a>
-    <div class="nav-links">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Raleway:400,600,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="navbar-fixed">
+      <nav class="nav-container">
+        <a href="#home" class="nav-logo">
+          <img src="bookie_logo_head_color.png" alt="STAATY Logo" class="logo-img">
+          <strong>STAATY</strong></a>
+        <div class="nav-links">
+          <a href="#home">HOME</a>
+          <a href="#features">FEATURES</a>
+          <a href="#stats">STATS</a>
+          <a href="#pricing">PRICING</a>
+          <a href="#contact">CONTACT</a>
+        </div>
+        <button class="mobile-toggle" onclick="toggleMobileMenu()">
+          <i class="fa fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <aside class="sidebar" id="mobileMenu">
+      <button class="close-btn" onclick="toggleMobileMenu()">Close ×</button>
       <a href="#home">HOME</a>
       <a href="#features">FEATURES</a>
       <a href="#stats">STATS</a>
       <a href="#pricing">PRICING</a>
       <a href="#contact">CONTACT</a>
-    </div>
-    <button class="mobile-toggle" onclick="toggleMobileMenu()">
-      <i class="fa fa-bars"></i>
-    </button>
-  </nav>
-</header>
+    </aside>
 
-<aside class="sidebar" id="mobileMenu">
-  <button class="close-btn" onclick="toggleMobileMenu()">Close ×</button>
-  <a href="#home">HOME</a>
-  <a href="#features">FEATURES</a>
-  <a href="#stats">STATS</a>
-  <a href="#pricing">PRICING</a>
-  <a href="#contact">CONTACT</a>
-</aside>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <h1 class="hero-title">Elevate Your Game with STAATY</h1>
+        <p class="hero-subtitle">
+          Real-time sports analytics and interactive stats for fans before and
+          after every game.
+        </p>
+        <p>Turning Underdogs Into GOATS</p>
+        <a href="#features" class="btn btn-primary btn-large"
+          >Discover Features</a
+        >
+      </div>
 
-<section class="hero" id="home">
-  <div class="hero-content">
-    <h1 class="hero-title">Elevate Your Game with STAATY</h1>
-    <p class="hero-subtitle">Real-time sports analytics and interactive stats for fans before and after every game.</p>
-    <a href="#features" class="btn btn-primary btn-large">Discover Features</a>
-  </div>
-  
-  <div class="hero-socials">
-    <i class="fab fa-facebook-f"></i>
-    <i class="fab fa-twitter"></i>
-    <i class="fab fa-instagram"></i>
-    <i class="fab fa-youtube"></i>
-  </div>
-</section>
+      <div class="hero-socials">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+    </section>
 
-<section class="section" id="features">
-  <div class="container text-center">
-    <h3 class="reveal">FEATURES</h3>
-    <p class="reveal subtitle">What makes STAATY the ultimate sports analytics app</p>
-    
-    <div class="grid stagger-container">
-      <div class="col-3">
-        <div class="feature-card reveal">
-          <i class="fas fa-chart-line icon-blue float"></i>
-          <h4>Real-Time Stats</h4>
-          <p>Get live game statistics and player performance data as the action unfolds.</p>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="feature-card reveal">
-          <i class="fas fa-users icon-blue float"></i>
-          <h4>Fan Interaction</h4>
-          <p>Engage with fellow fans through interactive polls, predictions, and discussions.</p>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="feature-card reveal">
-          <i class="fas fa-trophy icon-blue float"></i>
-          <h4>Predictive Analytics</h4>
-          <p>Use advanced AI to predict game outcomes and player performances.</p>
-        </div>
-      </div>
-      <div class="col-3">
-        <div class="feature-card reveal">
-          <i class="fas fa-mobile-alt icon-blue float"></i>
-          <h4>Cross-Platform</h4>
-          <p>Access your analytics on any device - mobile, tablet, or desktop.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <section class="section" id="features">
+      <div class="container text-center">
+        <h3 class="reveal">FEATURES</h3>
+        <p class="reveal subtitle">
+          What makes STAATY the ultimate sports analytics app
+        </p>
 
-<section class="section bg-light">
-  <div class="container">
-    <div class="grid align-center">
-      <div class="col-6 reveal-left">
-        <h3>How STAATY Works</h3>
-        <p>Experience sports like never before with our comprehensive analytics platform.</p>
-        <p>From pre-game predictions to post-game breakdowns, STAATY keeps you in the know.</p>
-        <p><a href="#pricing" class="btn btn-primary"><i class="fa fa-th"></i> Get Started</a></p>
-      </div>
-      <div class="col-6 reveal-right">
-        <img class="img-responsive rounded shadow" src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=80" alt="Sports">
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section" id="testimonials">
-  <div class="container text-center">
-    <h3 class="reveal">WHAT FANS SAY</h3>
-    <div class="grid stagger-container">
-      <div class="col-4">
-        <div class="feature-card reveal testimonial">
-            <p class="quote"><i>"STAATY changed how I watch games. The real-time stats keep me engaged!"</i></p>
-            <p class="author"><strong>John D.</strong>, Basketball Fan</p>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="feature-card reveal testimonial">
-            <p class="quote"><i>"The predictive analytics are spot on. I feel like a pro analyst now."</i></p>
-            <p class="author"><strong>Sarah M.</strong>, Soccer Enthusiast</p>
-        </div>
-      </div>
-      <div class="col-4">
-        <div class="feature-card reveal testimonial">
-            <p class="quote"><i>"Fan interactions make watching alone feel like being at the stadium."</i></p>
-            <p class="author"><strong>Mike R.</strong>, Football Lover</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="stats-bar" id="stats">
-  <div class="stat-item">
-    <span class="counter" data-target="500000">0</span>
-    <p>Active Users</p>
-  </div>
-  <div class="stat-item">
-    <span class="counter" data-target="10000000">0</span>
-    <p>Games Analyzed</p>
-  </div>
-  <div class="stat-item">
-    <span class="counter" data-target="95">0</span>
-    <p>% Prediction Accuracy</p>
-  </div>
-  <div class="stat-item">
-    <span class="counter" data-target="24">0</span>
-    <p>/7 Live Updates</p>
-  </div>
-</section>
-
-<section class="section bg-light" id="pricing">
-  <div class="container text-center">
-    <h3 class="reveal">PRICING</h3>
-    <div class="grid stagger-container">
-      <div class="col-4">
-        <div class="pricing-card reveal">
-          <div class="pricing-header"><h4>Free</h4></div>
-          <div class="pricing-body">
-            <p>Basic Stats</p>
-            <h2 class="price">$0</h2>
-            <button class="btn btn-primary">Get Started</button>
+        <div class="grid stagger-container">
+          <div class="col-3">
+            <div class="feature-card reveal">
+              <i class="fas fa-chart-line icon-blue float"></i>
+              <h4>Real-Time Stats</h4>
+              <p>
+                Get live game statistics and player performance data as the
+                action unfolds.
+              </p>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="feature-card reveal">
+              <i class="fas fa-users icon-blue float"></i>
+              <h4>Fan Interaction</h4>
+              <p>
+                Engage with fellow fans through interactive polls, predictions,
+                and discussions.
+              </p>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="feature-card reveal">
+              <i class="fas fa-trophy icon-blue float"></i>
+              <h4>Predictive Analytics</h4>
+              <p>
+                Use advanced AI to predict game outcomes and player
+                performances.
+              </p>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="feature-card reveal">
+              <i class="fas fa-mobile-alt icon-blue float"></i>
+              <h4>Cross-Platform</h4>
+              <p>
+                Access your analytics on any device - mobile, tablet, or
+                desktop.
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-4">
-        <div class="pricing-card reveal featured">
-          <div class="pricing-header pricing-header-premium">
-            <h4>Premium</h4>
-            <span class="badge">Popular</span>
+    </section>
+
+    <section class="section bg-light">
+      <div class="container">
+        <div class="grid align-center">
+          <div class="col-6 reveal-left">
+            <h3>How STAATY Works</h3>
+            <p>
+              Experience sports like never before with our comprehensive
+              analytics platform.
+            </p>
+            <p>
+              From pre-game predictions to post-game breakdowns, STAATY keeps
+              you in the know.
+            </p>
+            <p>
+              <a href="#pricing" class="btn btn-primary"
+                ><i class="fa fa-th"></i> Get Started</a
+              >
+            </p>
           </div>
-          <div class="pricing-body">
-            <p>VIP Community</p>
-            <h2 class="price">$19.99</h2>
-            <button class="btn btn-premium">Go Premium</button>
+          <div class="col-6 reveal-right">
+            <img
+              class="img-responsive rounded shadow"
+              src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=80"
+              alt="Sports"
+            />
           </div>
         </div>
       </div>
-      <div class="col-4">
-        <div class="pricing-card reveal">
-          <div class="pricing-header"><h4>Pro</h4></div>
-          <div class="pricing-body">
-            <p>Advanced Analytics</p>
-            <h2 class="price">$9.99</h2>
-            <button class="btn btn-primary">Subscribe</button>
+    </section>
+
+    <section class="section" id="testimonials">
+      <div class="container text-center">
+        <h3 class="reveal">WHAT FANS SAY</h3>
+        <div class="grid stagger-container">
+          <div class="col-4">
+            <div class="feature-card reveal testimonial">
+              <p class="quote">
+                <i
+                  >"STAATY changed how I watch games. The real-time stats keep
+                  me engaged!"</i
+                >
+              </p>
+              <p class="author"><strong>John D.</strong>, Basketball Fan</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="feature-card reveal testimonial">
+              <p class="quote">
+                <i
+                  >"The predictive analytics are spot on. I feel like a pro
+                  analyst now."</i
+                >
+              </p>
+              <p class="author"><strong>Sarah M.</strong>, Soccer Enthusiast</p>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="feature-card reveal testimonial">
+              <p class="quote">
+                <i
+                  >"Fan interactions make watching alone feel like being at the
+                  stadium."</i
+                >
+              </p>
+              <p class="author"><strong>Mike R.</strong>, Football Lover</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<section class="section" id="contact">
-  <div class="container">
-    <h3 class="text-center reveal">CONTACT US</h3>
-    <div class="grid">
-      <div class="col-6 reveal-left">
-        <div class="contact-info">
-          <p><i class="fa fa-map-marker"></i> New York, NY</p>
-          <p><i class="fa fa-phone"></i> +1 555-STAATY</p>
-          <p><i class="fa fa-envelope"></i> hello@staaty.com</p>
+    <section class="stats-bar" id="stats">
+      <div class="stat-item">
+        <span class="counter" data-target="10">0</span>
+        <p>Active Users</p>
+      </div>
+      <div class="stat-item">
+        <span class="counter" data-target="100">0</span>
+        <p>Games Analyzed</p>
+      </div>
+      <div class="stat-item">
+        <span class="counter" data-target="95">0</span>
+        <p>% Prediction Accuracy</p>
+      </div>
+      <div class="stat-item">
+        <span class="counter" data-target="24">0</span>
+        <p>/7 Live Updates</p>
+      </div>
+    </section>
+
+    <section class="section bg-light" id="pricing">
+      <div class="container text-center">
+        <h3 class="reveal">PRICING... Coming Soon</h3>
+        <div class="grid stagger-container">
+          <div class="col-4">
+            <div class="pricing-card reveal">
+              <div class="pricing-header"><h4>Free</h4></div>
+              <div class="pricing-body">
+                <p>Basic Stats</p>
+                <h2 class="price">$0</h2>
+                <button class="btn btn-primary">Get Started</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="pricing-card reveal featured">
+              <div class="pricing-header pricing-header-premium">
+                <h4>Premium</h4>
+                <span class="badge">Popular</span>
+              </div>
+              <div class="pricing-body">
+                <p>VIP Community</p>
+                <h2 class="price">$0</h2>
+                <button class="btn btn-premium">Go Premium</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="pricing-card reveal">
+              <div class="pricing-header"><h4>Pro</h4></div>
+              <div class="pricing-body">
+                <p>Advanced Analytics</p>
+                <h2 class="price">$0</h2>
+                <button class="btn btn-primary">Subscribe</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="col-6 reveal-right">
-        <form class="contact-form">
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="Email" required>
-          <button class="btn btn-primary" type="submit">SEND MESSAGE</button>
-        </form>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container">
+        <h3 class="text-center reveal">FAQ</h3>
+        <p class="text-center reveal subtitle">Frequently Asked Questions</p>
+
+        <div class="grid stagger-container">
+          <div class="col-6">
+            <div class="faq-item reveal-left">
+              <h4 class="faq-question">What is STAATY?</h4>
+              <p class="faq-answer">
+                STAATY is a professional sports analytics platform built for
+                everyday fans. We turn complex sports data into clear,
+                understandable insights through visualizations, probability
+                models, and simple explanations. Built for the most casual of
+                viewers, team fanatics, data nerds and those curious or serious
+                about betting markets. STAATY helps YOU experience the game more
+                clearly.
+              </p>
+            </div>
+
+            <div class="faq-item reveal-left">
+              <h4 class="faq-question">Who is STAATY Built For?</h4>
+              <p class="faq-answer">
+                STAATY is designed for the full spectrum of sports fans:
+              </p>
+              <ul class="faq-list">
+                <li>Casual viewers who want quick, clear insights</li>
+                <li>Fantasy sports players tracking performance trends</li>
+                <li>Data-minded fanatics who enjoy deeper analytics</li>
+                <li>
+                  Sports bettors looking for transparent probability models
+                </li>
+              </ul>
+            </div>
+
+            <div class="faq-item reveal-left">
+              <h4 class="faq-question">
+                How is STAATY different from existing sites?
+              </h4>
+              <p class="faq-answer">
+                Most sports platforms fall into three categories: oversimplified
+                media talking heads, betting sites with no insights, or
+                overwhelming spreadsheets. STAATY is THE BRIDGE to this gap. We
+                combine clean visualizations, simple explanations, and deeper
+                analytics so users can quickly understand what the data actually
+                says.
+              </p>
+            </div>
+
+            <div class="faq-item reveal-left">
+              <h4 class="faq-question">Is STAATY a sportsbook?</h4>
+              <p class="faq-answer">
+                No. STAATY does not take bets or operate as a sportsbook…YET.
+                Our platform focuses on analysis, probability, and transparency.
+                We help everyday fans understand the data behind games and
+                betting markets.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="faq-item reveal-right">
+              <h4 class="faq-question">Does STAATY guarantee winning bets?</h4>
+              <p class="faq-answer">
+                No platform can guarantee winning bets. What STAATY does provide
+                is analytics-driven probability insights so users can better
+                understand how likely an outcome actually is and whether current
+                odds reflect the underlying data. STAATY provides quick stats to
+                educate the wagerer on their decision vs. gut picks.
+              </p>
+            </div>
+
+            <div class="faq-item reveal-right">
+              <h4 class="faq-question">
+                Why focus on probability and transparency?
+              </h4>
+              <p class="faq-answer">
+                Sports betting has grown rapidly, but most platforms prioritize
+                engagement and wager odds rather than understanding. STAATY is
+                built around a different philosophy: informed fans make better
+                decisions. We help fans approach sports data with confidence
+                instead of speculation.
+              </p>
+            </div>
+
+            <div class="faq-item reveal-right">
+              <h4 class="faq-question">What sports will STAATY cover?</h4>
+              <p class="faq-answer">
+                STAATY will focus on major professional sports leagues, E-sports
+                competitions, and emerging leagues, including women’s
+                professional sports. Part of our mission is building robust,
+                consistent data systems for leagues that currently lack strong
+                public analytics.
+              </p>
+            </div>
+
+            <div class="faq-item reveal-right">
+              <h4 class="faq-question">Is STAATY free to use?</h4>
+              <p class="faq-answer">
+                Yes. Our goal is to make core insights accessible without
+                paywalls. As the platform grows, a multi-tiered subscription
+                service offering advanced tools will be introduced. Eventually,
+                STAATY will offer the ultimate Bloomberg Sports Data Terminal.
+              </p>
+            </div>
+
+            <div class="faq-item reveal-right">
+              <h4 class="faq-question">Who built STAATY?</h4>
+              <p class="faq-answer">
+                STAATY was created by a team of data scientists and analysts who
+                have spent their careers building systems where accuracy and
+                accountability mattered. They partnered with a visionary
+                developer to bring that same approach to sports analytics.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<footer class="footer">
-  <a href="#home" class="back-to-top"><i class="fa fa-arrow-up"></i> To the top</a>
-  <div class="social-links">
-    <i class="fab fa-facebook-f"></i>
-    <i class="fab fa-twitter"></i>
-    <i class="fab fa-instagram"></i>
-    <i class="fab fa-youtube"></i>
-  </div>
-  <p>© 2026 STAATY. All rights reserved.</p>
-</footer>
+    <section class="section" id="contact">
+      <div class="container">
+        <h3 class="text-center reveal">CONTACT US</h3>
+        <div class="grid">
+          <div class="col-6 reveal-left">
+            <div class="contact-info">
+              <p><i class="fa fa-map-marker"></i> Louisville, KY</p>
+              <!-- <p><i class="fa fa-phone"></i> +1 555-STAATY</p> -->
+              <!-- <p><i class="fa fa-envelope"></i> hello@staaty.com</p> -->
+            </div>
+          </div>
+          <div class="col-6 reveal-right">
+            <form
+              class="contact-form"
+              action="mailto:danny.morton714@gmail.com"
+              method="post"
+              enctype="text/plain"
+            >
+              <input type="text" name="Name" placeholder="Name" required />
+              <input type="email" name="Email" placeholder="Email" required />
+              <textarea
+                name="Message"
+                placeholder="How can we help?"
+                required
+                style="
+                  width: 100%;
+                  padding: 12px;
+                  margin-bottom: 15px;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  font-family: inherit;
+                "
+              ></textarea>
+              <button class="btn btn-primary" type="submit">
+                SEND MESSAGE
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script src="script.js"></script>
-</body>
+    <footer class="footer">
+      <a href="#home" class="back-to-top"
+        ><i class="fa fa-arrow-up"></i> To the top</a
+      >
+      <div class="social-links">
+        <i class="fab fa-facebook-f"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+      </div>
+      <p>© 2026 STAATY. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
