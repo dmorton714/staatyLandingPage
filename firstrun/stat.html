@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>STAATY - Sports Analytics App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,600,700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Raleway", sans-serif; font-weight: 400;}
+body, html {
+  height: 100%;
+  line-height: 1.8;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* --- Scroll Animations --- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  filter: blur(5px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.reveal-left { transform: translateX(-50px); opacity: 0; transition: all 0.8s ease; }
+.reveal-right { transform: translateX(50px); opacity: 0; transition: all 0.8s ease; }
+.reveal-left.visible, .reveal-right.visible { transform: translateX(0); opacity: 1; }
+
+/* Header / Hero */
+.bgimg-1 {
+  background-position: center;
+  background-size: cover;
+  background-image: url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80");
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+/* Fixed the grey overlay issue by lowering z-index */
+.bgimg-1::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(45deg, rgba(0,0,0,0.4), rgba(0,0,0,0.6));
+  z-index: 1; /* Lower than navbar and content */
+}
+
+/* Navbar */
+.w3-top { z-index: 9999; } /* Ensures navbar is always clickable */
+
+/* Big Stats Styling */
+.counter {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  line-height: 1;
+}
+
+/* Components */
+.feature-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+  margin-bottom: 2rem;
+  height: 320px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.feature-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+
+.pricing-card {
+  background: #fff;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.pricing-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; }
+.pricing-header-premium { background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%) !important; position: relative; }
+
+.btn-primary { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border: none; border-radius: 25px; padding: 12px 30px; cursor: pointer; transition: 0.3s; }
+.btn-premium { background: linear-gradient(135deg, #ff6b6b 0%, #ffa500 100%); color: white; border: none; border-radius: 25px; padding: 12px 30px; cursor: pointer; transition: 0.3s; }
+
+.float { animation: float 3s ease-in-out infinite; }
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+
+@media (max-width: 768px) {
+  .bgimg-1 { background-attachment: scroll; }
+  .w3-container { padding: 64px 16px !important; }
+}
+</style>
+</head>
+<body>
+
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card" id="myNavbar">
+    <a href="#home" class="w3-bar-item w3-button w3-wide"><strong>STAATY</strong></a>
+    <div class="w3-right w3-hide-small">
+      <a href="#home" class="w3-bar-item w3-button">HOME</a>
+      <a href="#features" class="w3-bar-item w3-button">FEATURES</a>
+      <a href="#stats" class="w3-bar-item w3-button">STATS</a>
+      <a href="#pricing" class="w3-bar-item w3-button">PRICING</a>
+      <a href="#contact" class="w3-bar-item w3-button">CONTACT</a>
+    </div>
+    <a href="javascript:void(0)" class="w3-bar-item w3-button w3-right w3-hide-large w3-hide-medium" onclick="w3_open()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+</div>
+
+<nav class="w3-sidebar w3-bar-block w3-black w3-card w3-animate-left w3-hide-medium w3-hide-large" style="display:none; z-index:10000;" id="mySidebar">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-large w3-padding-16">Close ×</a>
+  <a href="#home" onclick="w3_close()" class="w3-bar-item w3-button">HOME</a>
+  <a href="#features" onclick="w3_close()" class="w3-bar-item w3-button">FEATURES</a>
+  <a href="#stats" onclick="w3_close()" class="w3-bar-item w3-button">STATS</a>
+  <a href="#pricing" onclick="w3_close()" class="w3-bar-item w3-button">PRICING</a>
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<header class="bgimg-1 w3-display-container w3-grayscale-min" id="home">
+  <div class="w3-text-white w3-center" style="position:relative; z-index:2; max-width:800px; padding:0 20px;">
+    <span class="w3-jumbo w3-hide-small">Elevate Your Game with STAATY</span><br>
+    <span class="w3-xxlarge w3-hide-large w3-hide-medium">Elevate Your Game with STAATY</span><br>
+    <span class="w3-large">Real-time sports analytics and interactive stats for fans before and after every game.</span>
+    <p><a href="#features" class="w3-button btn-primary w3-padding-large w3-large w3-margin-top">Discover Features</a></p>
+  </div>
+  
+  <div class="w3-display-bottomleft w3-text-grey w3-large" style="padding:24px 48px; z-index: 3;">
+    <i class="fab fa-facebook-f w3-hover-opacity w3-margin-right"></i>
+    <i class="fab fa-twitter w3-hover-opacity w3-margin-right"></i>
+    <i class="fab fa-instagram w3-hover-opacity w3-margin-right"></i>
+    <i class="fab fa-youtube w3-hover-opacity"></i>
+  </div>
+</header>
+
+<div class="w3-container" id="features" style="padding:128px 16px">
+  <h3 class="w3-center reveal">FEATURES</h3>
+  <p class="w3-center w3-large reveal">What makes STAATY the ultimate sports analytics app</p>
+  <div class="w3-row-padding w3-center stagger-container" style="margin-top:64px">
+    <div class="w3-quarter">
+      <div class="feature-card reveal">
+        <i class="fas fa-chart-line w3-text-blue w3-xxxlarge float"></i>
+        <p class="w3-large">Real-Time Stats</p>
+        <p>Get live game statistics and player performance data as the action unfolds.</p>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="feature-card reveal">
+        <i class="fas fa-users w3-text-blue w3-xxxlarge float"></i>
+        <p class="w3-large">Fan Interaction</p>
+        <p>Engage with fellow fans through interactive polls, predictions, and discussions.</p>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="feature-card reveal">
+        <i class="fas fa-trophy w3-text-blue w3-xxxlarge float"></i>
+        <p class="w3-large">Predictive Analytics</p>
+        <p>Use advanced AI to predict game outcomes and player performances.</p>
+      </div>
+    </div>
+    <div class="w3-quarter">
+      <div class="feature-card reveal">
+        <i class="fas fa-mobile-alt w3-text-blue w3-xxxlarge float"></i>
+        <p class="w3-large">Cross-Platform</p>
+        <p>Access your analytics on any device - mobile, tablet, or desktop.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-light-grey" style="padding:128px 16px">
+  <div class="w3-row-padding">
+    <div class="w3-col m6 reveal-left">
+      <h3>How STAATY Works</h3>
+      <p>Experience sports like never before with our comprehensive analytics platform.</p>
+      <p>From pre-game predictions to post-game breakdowns, STAATY keeps you in the know.</p>
+      <p><a href="#pricing" class="w3-button btn-primary"><i class="fa fa-th"></i> Get Started</a></p>
+    </div>
+    <div class="w3-col m6 reveal-right">
+      <img class="w3-image w3-round-large" src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=80" alt="Sports" width="700">
+    </div>
+  </div>
+</div>
+
+<div class="w3-container" id="testimonials" style="padding:128px 16px">
+  <h3 class="w3-center reveal">WHAT FANS SAY</h3>
+  <div class="w3-row-padding stagger-container" style="margin-top:64px">
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="feature-card reveal" style="height:220px">
+          <p class="w3-text-grey"><i>"STAATY changed how I watch games. The real-time stats keep me engaged!"</i></p>
+          <p><strong>John D.</strong>, Basketball Fan</p>
+      </div>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="feature-card reveal" style="height:220px">
+          <p class="w3-text-grey"><i>"The predictive analytics are spot on. I feel like a pro analyst now."</i></p>
+          <p><strong>Sarah M.</strong>, Soccer Enthusiast</p>
+      </div>
+    </div>
+    <div class="w3-col l4 m6 w3-margin-bottom">
+      <div class="feature-card reveal" style="height:220px">
+          <p class="w3-text-grey"><i>"Fan interactions make watching alone feel like being at the stadium."</i></p>
+          <p><strong>Mike R.</strong>, Football Lover</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-row w3-center w3-dark-grey w3-padding-64" id="stats">
+  <div class="w3-quarter">
+    <span class="counter" data-target="500000">0</span>
+    <span>Active Users</span>
+  </div>
+  <div class="w3-quarter">
+    <span class="counter" data-target="10000000">0</span>
+    <span>Games Analyzed</span>
+  </div>
+  <div class="w3-quarter">
+    <span class="counter" data-target="95">0</span>
+    <span>% Prediction Accuracy</span>
+  </div>
+  <div class="w3-quarter">
+    <span class="counter" data-target="24">0</span>
+    <span>/7 Live Updates</span>
+  </div>
+</div>
+
+<div class="w3-container w3-center w3-light-grey" id="pricing" style="padding:128px 16px">
+  <h3 class="reveal">PRICING</h3>
+  <div class="w3-row-padding stagger-container" style="margin-top:64px">
+    <div class="w3-col l4 m12 w3-section">
+      <div class="pricing-card reveal">
+        <div class="pricing-header"><h4>Free</h4></div>
+        <ul class="w3-ul w3-white">
+          <li class="w3-padding-16">Basic Stats</li>
+          <li class="w3-padding-16"><h2>$ 0</h2></li>
+          <li class="w3-light-grey w3-padding-24"><button class="btn-primary">Get Started</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="w3-col l4 m12 w3-section">
+      <div class="pricing-card reveal">
+        <div class="pricing-header pricing-header-premium">
+          <h4>Premium</h4>
+          <span class="w3-tag w3-red w3-round" style="position:absolute;top:10px;right:10px">Popular</span>
+        </div>
+        <ul class="w3-ul w3-white">
+          <li class="w3-padding-16">VIP Community</li>
+          <li class="w3-padding-16"><h2>$ 19.99</h2></li>
+          <li class="w3-light-grey w3-padding-24"><button class="btn-premium">Go Premium</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="w3-col l4 m12 w3-section">
+      <div class="pricing-card reveal">
+        <div class="pricing-header"><h4>Pro</h4></div>
+        <ul class="w3-ul w3-white">
+          <li class="w3-padding-16">Advanced Analytics</li>
+          <li class="w3-padding-16"><h2>$ 9.99</h2></li>
+          <li class="w3-light-grey w3-padding-24"><button class="btn-primary">Subscribe</button></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container" id="contact" style="padding:128px 16px">
+  <h3 class="w3-center reveal">CONTACT US</h3>
+  <div class="w3-row-padding" style="margin-top:48px">
+    <div class="w3-col m5 reveal-left">
+      <p><i class="fa fa-map-marker fa-fw w3-xxlarge w3-margin-right"></i> New York, NY</p>
+      <p><i class="fa fa-phone fa-fw w3-xxlarge w3-margin-right"></i> +1 555-STAATY</p>
+      <p><i class="fa fa-envelope fa-fw w3-xxlarge w3-margin-right"></i> hello@staaty.com</p>
+    </div>
+    <div class="w3-col m7 reveal-right">
+      <form action="/action_page.php" target="_blank">
+        <p><input class="w3-input w3-border" type="text" placeholder="Name" required></p>
+        <p><input class="w3-input w3-border" type="text" placeholder="Email" required></p>
+        <button class="btn-primary" type="submit"><i class="fa fa-paper-plane"></i> SEND MESSAGE</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<footer class="w3-center w3-black w3-padding-64">
+  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+  <div class="w3-xlarge w3-section">
+    <i class="fab fa-facebook-f w3-hover-opacity w3-margin-right"></i>
+    <i class="fab fa-twitter w3-hover-opacity w3-margin-right"></i>
+    <i class="fab fa-instagram w3-hover-opacity w3-margin-right"></i>
+    <i class="fab fa-youtube w3-hover-opacity"></i>
+  </div>
+  <p>© 2026 STAATY. All rights reserved.</p>
+</footer>
+
+<script>
+// Main Reveal Observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      if(entry.target.classList.contains('counter')) startCounter(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .counter').forEach(el => observer.observe(el));
+
+// Delay children for stagger effect
+document.querySelectorAll('.stagger-container').forEach(container => {
+    Array.from(container.children).forEach((child, i) => {
+        const target = child.querySelector('.reveal') || child;
+        target.style.transitionDelay = `${i * 0.15}s`;
+    });
+});
+
+// Large Counter Logic
+function startCounter(el) {
+    if (el.classList.contains('counted')) return;
+    el.classList.add('counted');
+    const target = parseInt(el.dataset.target);
+    let curr = 0;
+    const duration = 2000;
+    const step = target / (duration / 16);
+    
+    const update = () => {
+        curr += step;
+        if (curr >= target) {
+            el.innerText = target.toLocaleString() + (target > 100 ? '+' : '');
+        } else {
+            el.innerText = Math.floor(curr).toLocaleString() + (target > 100 ? '+' : '');
+            requestAnimationFrame(update);
+        }
+    };
+    update();
+}
+
+function w3_open() { document.getElementById("mySidebar").style.display = "block"; }
+function w3_close() { document.getElementById("mySidebar").style.display = "none"; }
+</script>
+
+</body>
+</html>

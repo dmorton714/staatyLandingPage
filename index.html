@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>STAATY - Sports Analytics App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,600,700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="navbar-fixed">
+  <nav class="nav-container">
+    <a href="#home" class="nav-logo"><strong>STAATY</strong></a>
+    <div class="nav-links">
+      <a href="#home">HOME</a>
+      <a href="#features">FEATURES</a>
+      <a href="#stats">STATS</a>
+      <a href="#pricing">PRICING</a>
+      <a href="#contact">CONTACT</a>
+    </div>
+    <button class="mobile-toggle" onclick="toggleMobileMenu()">
+      <i class="fa fa-bars"></i>
+    </button>
+  </nav>
+</header>
+
+<aside class="sidebar" id="mobileMenu">
+  <button class="close-btn" onclick="toggleMobileMenu()">Close ×</button>
+  <a href="#home">HOME</a>
+  <a href="#features">FEATURES</a>
+  <a href="#stats">STATS</a>
+  <a href="#pricing">PRICING</a>
+  <a href="#contact">CONTACT</a>
+</aside>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1 class="hero-title">Elevate Your Game with STAATY</h1>
+    <p class="hero-subtitle">Real-time sports analytics and interactive stats for fans before and after every game.</p>
+    <a href="#features" class="btn btn-primary btn-large">Discover Features</a>
+  </div>
+  
+  <div class="hero-socials">
+    <i class="fab fa-facebook-f"></i>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-youtube"></i>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="container text-center">
+    <h3 class="reveal">FEATURES</h3>
+    <p class="reveal subtitle">What makes STAATY the ultimate sports analytics app</p>
+    
+    <div class="grid stagger-container">
+      <div class="col-3">
+        <div class="feature-card reveal">
+          <i class="fas fa-chart-line icon-blue float"></i>
+          <h4>Real-Time Stats</h4>
+          <p>Get live game statistics and player performance data as the action unfolds.</p>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="feature-card reveal">
+          <i class="fas fa-users icon-blue float"></i>
+          <h4>Fan Interaction</h4>
+          <p>Engage with fellow fans through interactive polls, predictions, and discussions.</p>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="feature-card reveal">
+          <i class="fas fa-trophy icon-blue float"></i>
+          <h4>Predictive Analytics</h4>
+          <p>Use advanced AI to predict game outcomes and player performances.</p>
+        </div>
+      </div>
+      <div class="col-3">
+        <div class="feature-card reveal">
+          <i class="fas fa-mobile-alt icon-blue float"></i>
+          <h4>Cross-Platform</h4>
+          <p>Access your analytics on any device - mobile, tablet, or desktop.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section bg-light">
+  <div class="container">
+    <div class="grid align-center">
+      <div class="col-6 reveal-left">
+        <h3>How STAATY Works</h3>
+        <p>Experience sports like never before with our comprehensive analytics platform.</p>
+        <p>From pre-game predictions to post-game breakdowns, STAATY keeps you in the know.</p>
+        <p><a href="#pricing" class="btn btn-primary"><i class="fa fa-th"></i> Get Started</a></p>
+      </div>
+      <div class="col-6 reveal-right">
+        <img class="img-responsive rounded shadow" src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=1000&q=80" alt="Sports">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="testimonials">
+  <div class="container text-center">
+    <h3 class="reveal">WHAT FANS SAY</h3>
+    <div class="grid stagger-container">
+      <div class="col-4">
+        <div class="feature-card reveal testimonial">
+            <p class="quote"><i>"STAATY changed how I watch games. The real-time stats keep me engaged!"</i></p>
+            <p class="author"><strong>John D.</strong>, Basketball Fan</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="feature-card reveal testimonial">
+            <p class="quote"><i>"The predictive analytics are spot on. I feel like a pro analyst now."</i></p>
+            <p class="author"><strong>Sarah M.</strong>, Soccer Enthusiast</p>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="feature-card reveal testimonial">
+            <p class="quote"><i>"Fan interactions make watching alone feel like being at the stadium."</i></p>
+            <p class="author"><strong>Mike R.</strong>, Football Lover</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="stats-bar" id="stats">
+  <div class="stat-item">
+    <span class="counter" data-target="500000">0</span>
+    <p>Active Users</p>
+  </div>
+  <div class="stat-item">
+    <span class="counter" data-target="10000000">0</span>
+    <p>Games Analyzed</p>
+  </div>
+  <div class="stat-item">
+    <span class="counter" data-target="95">0</span>
+    <p>% Prediction Accuracy</p>
+  </div>
+  <div class="stat-item">
+    <span class="counter" data-target="24">0</span>
+    <p>/7 Live Updates</p>
+  </div>
+</section>
+
+<section class="section bg-light" id="pricing">
+  <div class="container text-center">
+    <h3 class="reveal">PRICING</h3>
+    <div class="grid stagger-container">
+      <div class="col-4">
+        <div class="pricing-card reveal">
+          <div class="pricing-header"><h4>Free</h4></div>
+          <div class="pricing-body">
+            <p>Basic Stats</p>
+            <h2 class="price">$0</h2>
+            <button class="btn btn-primary">Get Started</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="pricing-card reveal featured">
+          <div class="pricing-header pricing-header-premium">
+            <h4>Premium</h4>
+            <span class="badge">Popular</span>
+          </div>
+          <div class="pricing-body">
+            <p>VIP Community</p>
+            <h2 class="price">$19.99</h2>
+            <button class="btn btn-premium">Go Premium</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="pricing-card reveal">
+          <div class="pricing-header"><h4>Pro</h4></div>
+          <div class="pricing-body">
+            <p>Advanced Analytics</p>
+            <h2 class="price">$9.99</h2>
+            <button class="btn btn-primary">Subscribe</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="container">
+    <h3 class="text-center reveal">CONTACT US</h3>
+    <div class="grid">
+      <div class="col-6 reveal-left">
+        <div class="contact-info">
+          <p><i class="fa fa-map-marker"></i> New York, NY</p>
+          <p><i class="fa fa-phone"></i> +1 555-STAATY</p>
+          <p><i class="fa fa-envelope"></i> hello@staaty.com</p>
+        </div>
+      </div>
+      <div class="col-6 reveal-right">
+        <form class="contact-form">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <button class="btn btn-primary" type="submit">SEND MESSAGE</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <a href="#home" class="back-to-top"><i class="fa fa-arrow-up"></i> To the top</a>
+  <div class="social-links">
+    <i class="fab fa-facebook-f"></i>
+    <i class="fab fa-twitter"></i>
+    <i class="fab fa-instagram"></i>
+    <i class="fab fa-youtube"></i>
+  </div>
+  <p>© 2026 STAATY. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
