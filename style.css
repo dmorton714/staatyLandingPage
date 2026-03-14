@@ -264,6 +264,43 @@ html {
   color: #fff;
 }
 
+/* --- Work With Us Banner --- */
+.cta-banner {
+    background: linear-gradient(135deg, #1e293b, #334155, #475569); /* Professional dark slate gradient */
+    color: white;
+    padding: 100px 0;
+    box-shadow: inset 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.cta-banner h3 {
+    margin-bottom: 10px;
+}
+
+.cta-content .cta-text {
+    max-width: 800px;
+    margin: 0 auto 15px auto;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #f8fafc;
+}
+
+/* Custom button for the dark background */
+.cta-btn {
+    background: #fff;
+    color: #334155;
+    font-size: 1.1rem;
+    padding: 15px 40px;
+    font-weight: 700;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.cta-btn:hover {
+    background: #f1f5f9;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+}
+
+
 /* --- FAQ Custom Styles --- */
 .faq-item {
   margin-bottom: 40px;
