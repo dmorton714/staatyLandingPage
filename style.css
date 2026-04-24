@@ -15,11 +15,11 @@ html {
 .nav-logo {
     display: flex;
     align-items: center;
-    gap: 10px; /* Space between image and text */
+    gap: 10px;
 }
 
 .logo-img {
-    height: 30px; /* Adjust this based on how big you want the logo */
+    height: 50px; 
     width: auto;
     display: block;
 }
@@ -115,7 +115,8 @@ html {
   height: 100vh;
   background:
     linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)),
-    url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1920&q=80");
+    /* url("https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1920&q=80"); */
+    url("images/boxing.avif");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
